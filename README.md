@@ -8,9 +8,16 @@ This project aims to classify movie reviews as positive or negative using machin
 - Containerization: Docker
 
 ## Running with Docker Compose
-1. Install Docker and Docker Compose.
-2. Build and run the project:
+1. Install Docker with Docker Compose.
+2. Build project:
 ```bash
-docker-compose build docker-compose up
+docker compose buid
 ```
-3. To stop the container: `docker-compose down`
+3. Run the project:
+```bash
+docker compose up -d
+```
+4. To stop the container: `docker compose down`
+
+## Current Functionality
+- `scripts/load_data.py`: Loads movie reviews from NLTK and saves them to `data/movie_reviews.csv`.

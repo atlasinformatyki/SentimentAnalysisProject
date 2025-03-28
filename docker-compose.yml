@@ -3,4 +3,4 @@ services:
     build: .
     volumes:
       - ./data:/app/data
-    command: tail -f /dev/null
+    command: python scripts/load_data.py
