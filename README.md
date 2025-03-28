@@ -21,3 +21,4 @@ docker compose up -d
 
 ## Current Functionality
 - `scripts/load_data.py`: Loads movie reviews from NLTK and saves them to `data/movie_reviews.csv`.
+- `scripts/preprocess_data.py`: Preprocesses reviews by converting to lowercase and removing special characters.
