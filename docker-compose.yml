@@ -5,5 +5,6 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ./data:/app/data
+      - ./models:/app/models
       - ./scripts:/app/scripts
     command: python scripts/load_data.py
