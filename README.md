@@ -52,3 +52,4 @@ The `run.sh` script wraps and simplifies Docker Compose commands. It allows you 
 - `scripts/load_data.py`: Loads movie reviews from NLTK and saves them to `data/movie_reviews.csv`.
 - `scripts/preprocess_data.py`: Preprocesses reviews by converting to lowercase and removing special characters.
 - `scripts/train_model.py`: Trains logistic regression model using TF-IDF features, evaluates accuracy, and persists model artifacts to `models/` directory
+- `scripts/predict.py`: Provides a negative or positive opinion for the sentence (not finished yet)

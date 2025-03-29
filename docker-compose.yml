@@ -8,3 +8,4 @@ services:
       - ./models:/app/models
       - ./scripts:/app/scripts
     command: python scripts/load_data.py
+    # command: python scripts/predict.py "This movie was fantastic!"
