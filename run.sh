@@ -1,6 +1,7 @@
 #!/bin/bash
+set -euo pipefail
 
-MODE=$1
+MODE="$1"
 
 if [ "$MODE" == "dev" ]; then
     docker compose build
