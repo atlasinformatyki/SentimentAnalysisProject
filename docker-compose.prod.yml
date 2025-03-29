@@ -2,8 +2,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.prod
     volumes:
       - ./data:/app/data
-      - ./scripts:/app/scripts
     command: python scripts/load_data.py
