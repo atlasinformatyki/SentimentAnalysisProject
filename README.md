@@ -7,46 +7,47 @@ This project aims to classify movie reviews as positive or negative using machin
 - Python 3.13
 - Libraries: pandas, nltk, scikit-learn
 - Containerization: Docker
+- Bash
 
 ## Running with Docker Compose
 
 ### Development
 
-1. Install Docker and Docker Compose.
-2. Build the project:
+1. Build and run the development version (code mounted via volumes):
 
 ```bash
-docker compose build
+docker compose up --build
 ```
-3. Run the project (code mounted via volumes):
+2. Stop and remove containers:
 
 ```bash
-docker compose up
-```
-4. Stop the container and remove it:
-
-```bash
-docker compose down
+docker compose down --remove-orphans
 ```
 
 ### Production
 
-1. Build the production image:
+1. Build and run the production version:
 
 ```bash
-docker compose -f docker-compose.prod.yml build
+docker compose -f docker-compose.prod.yml up --build
 ```
-2. Run the production container (code embedded in image):
+2. Stop and remove the production containers (code embedded in image):
 
 ```bash
-docker compose -f docker-compose.prod.yml up
+docker compose -f docker-compose.prod.yml down --remove-orphans
 ```
-3. Stop the container and remove it:
 
-```bash
-docker compose -f docker-compose.prod.yml down
-```
+## Using run.sh
+
+The `run.sh` script wraps and simplifies Docker Compose commands. It allows you to build and run the project in one step, rebuilding images each time for consistency. Containers are automatically removed after execution.
+
+- Setup: Grant execute permissions to the script before first use: `chmod +x run.sh`
+
+- Development: `./run.sh dev`
+
+- Production: `./run.sh prod`
 
 ## Current Functionality
+
 - `scripts/load_data.py`: Loads movie reviews from NLTK and saves them to `data/movie_reviews.csv`.
 - `scripts/preprocess_data.py`: Preprocesses reviews by converting to lowercase and removing special characters.
